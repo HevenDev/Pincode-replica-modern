@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="zxx">
+  <head>
+    <title>Pincode Infra — About</title>
+    <link
+      rel="icon"
+      href="img/PINCODE_FAVICON.jpg"
+      type="image/gif"
+      sizes="16x16"
+    />
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="Almaris — Hotel Website Template" name="description" />
+    <meta content="" name="keywords" />
+    <meta content="" name="author" />
+    <!-- CSS Files
+    ================================================== -->
+    <link
+      href="css/bootstrap.min.css"
+      rel="stylesheet"
+      type="text/css"
+      id="bootstrap"
+    />
+    <link href="css/plugins.css" rel="stylesheet" type="text/css" />
+    <link href="css/swiper.css" rel="stylesheet" type="text/css" />
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
+    <link href="css/coloring.css" rel="stylesheet" type="text/css" />
+    <!-- color scheme -->
+    <link
+      id="colors"
+      href="css/colors/scheme-01.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <style>
+      .mv-para {
+        padding: 0 2rem 1rem;
+      }
+      /* Overlay */
+      .pop_overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.6);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+        z-index: 98;
+      }
+
+      /* Popup Form */
+      .popup {
+        background: white;
+        padding: 20px;
+        width: 350px;
+        border-radius: 8px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        text-align: center;
+        transform: scale(0.7);
+        opacity: 0;
+        transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+        position: relative;
+      }
+
+      /* Show Active State */
+      .pop_overlay.active {
+        opacity: 1;
+        visibility: visible;
+      }
+
+      .popup.active {
+        opacity: 1;
+        transform: scale(1);
+      }
+
+      /* Close Button */
+      .close-btn {
+        position: absolute;
+        top: 10px;
+        right: 15px;
+        font-size: 20px;
+        cursor: pointer;
+        color: #555;
+      }
+
+      .close-btn:hover {
+        color: red;
+      }
+
+      /* Form Inputs */
+      .popup h2 {
+        margin-bottom: 10px;
+        font-size: 20px;
+      }
+
+      .popup p {
+        margin-bottom: 15px;
+        color: #666;
+      }
+
+      .popup input,
+      .popup textarea {
+        width: 100%;
+        padding: 10px;
+        margin: 5px 0;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 14px;
+      }
+
+      .popup textarea {
+        resize: none;
+        height: 80px;
+      }
+
+      /* Send Button */
+      .send-btn {
+        background: #301a1a;
+        color: white;
+        padding: 10px;
+        width: 100%;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .send-btn i {
+        margin-left: 8px;
+      }
+
+      .send-btn:hover {
+        background: #218838;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="wrapper">
+      <a href="#" id="back-to-top"></a>
+
+      <!-- page preloader begin -->
+      <div id="de-loader"></div>
+      <!-- page preloader close -->
+      <div class="pop_overlay" id="popupOverlay">
+        <div class="popup" id="popupForm">
+          <span class="close-btn" onclick="closePopup()">&times;</span>
+          <h2>Want to know more?</h2>
+          <p>Enquire now</p>
+          <input type="text" placeholder="Your Name" />
+          <input type="tel" placeholder="Phone Number" />
+          <input type="email" placeholder="Email" />
+          <textarea placeholder="Your Message"></textarea>
+          <button class="send-btn">
+            Send <i class="fas fa-paper-plane"></i>
+          </button>
+        </div>
+      </div>
+      <!-- header begin -->
+      <header class="transparent has-topbar">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="de-flex sm-pt10">
+                <div class="de-flex-col">
+                  <!-- logo begin -->
+                  <div id="logo">
+                    <a href="/">
+                      <img class="logo-main" src="img/LogoWhite.png" alt="" />
+                      <img class="logo-scroll" src="img/LogoWhite.png" alt="" />
+                      <img class="logo-mobile" src="img/LogoWhite.png" alt="" />
+                    </a>
+                  </div>
+                  <!-- logo close -->
+                </div>
+                <div class="de-flex-col header-col-mid">
+                  <ul id="mainmenu">
+                    <li>
+                      <a style="font-size: 20px;" class="menu-item" href="index.html">Home</a>
+                    </li>
+                    <li>
+                      <a style="font-size: 20px;" class="menu-item" href="/about.html">About</a>
+                    </li>
+                    <li class="menu-item">
+                      <a style="font-size: 20px;" href="/upcoming-project.html">Projects</a>
+                      <ul>
+                        <li>
+                          <a href="/ongoing-project.html">Ongoing Project</a>
+                        </li>
+                        <li>
+                          <a href="/upcoming-project.html">Upcoming Project</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li><a style="font-size: 20px;" class="menu-item" href="/index.html#features">Features</a></li>
+                    <li>
+                      <a style="font-size: 20px;" class="menu-item" href="/index.html#contact">Contact</a>
+                    </li>
+                  </ul>
+                </div>
+                <div class="de-flex-col">
+                  <div class="menu_side_area">
+                    <button class="open-popup-btn btn-main btn-line">
+                      Enquiry
+                    </button>
+                    <span id="menu-btn"></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+      <!-- header close -->
+      <!-- content begin -->
+      <div class="no-bottom no-top" id="content">
+        <div id="top"></div>
+
+        <section id="subheader" class="relative jarallax text-light">
+          <img src="img/ABT_Us.jpg" class="jarallax-img" alt="" />
+          <div class="container relative z-index-1000">
+            <div class="row justify-content-center">
+              <div class="col-lg-12 text-center">
+                <h1>About Us</h1>
+                <ul class="crumb">
+                  <li><a href="index.html">Home</a></li>
+                  <li class="active">About Us</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="de-overlay"></div>
+        </section>
+
+        <section class="relative lines-deco">
+          <div class="container" >
+            <div class="row gx-5 align-items-center" >
+              <div class="col-lg-6 relative z-index-2" style="background-color: #fff;">
+                <div class="subtitle wow fadeInUp mb-3">Welcome</div>
+                <h2 class="wow fadeInUp" data-wow-delay=".2s">
+                  Building Legacies Through Vision and Innovation
+                </h2>
+                <p>
+                  PINCODE’s journey is defined by a rich history of visionary
+                  pioneers who transformed challenges into opportunities. Our
+                  team’s deep-rooted expertise, relentless passion, and
+                  innovative spirit have consistently redefined industry
+                  standards. With decades of collective experience, we have
+                  built iconic landmarks that inspire trust and fuel progress.
+                  Our legacy is marked by a commitment to quality, ethical
+                  practices, and sustainable growth. Every project reflects our
+                  dedication to crafting intelligent spaces that elevate
+                  communities and empower businesses. We honor our past while
+                  relentlessly pursuing future breakthroughs, shaping
+                  environments where innovation meets tradition to create
+                  lasting, transformative value.
+                </p>
+              </div>
+
+              <div class="col-lg-6">
+                <div class="row g-4">
+                  <div class="col-6">
+                    <img
+                      src="img/Modern_Design.jpg"
+                      class="img-fluid mb-4 wow zoomIn"
+                      alt=""
+                    />
+                    <div class="col-12 text-center z-index-top">
+                      <img src="/img/ABT_1.jpg" alt="" class="img-fluid mb-4 wow zoomIn">
+                    </div>
+                  </div>
+                  <div class="col-6">
+                    <div class="spacer-single sm-hide"></div>
+                    <div class="col-12 text-center z-index-top">
+                      <img src="/img/abt_2.jpg" alt="" class="img-fluid mb-4 wow zoomIn">
+                    </div>
+                    <img
+                      src="img/Modern_amenities.jpg"
+                      class="img-fluid mt-4 wow zoomIn"
+                      alt=""
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="bg-light lines-deco">
+          <div class="container">
+            <div class="row g-4">
+              <div class="col-lg-12 text-center">
+                <div class="subtitle wow fadeInUp mb-3">Behind the Scene</div>
+                <h2 class="wow fadeInUp mb-0" data-wow-delay=".2s">Our Team</h2>
+              </div>
+              <div class="row justify-content-center">
+                <div
+                  class="col-lg-3 col-md-6 col-sm-12 d-flex flex-column align-items-center"
+                >
+                  <!-- <img src="img/manpreet.jpg" class="img-fluid z-index-top" alt="" style="height: 350px; object-fit: cover;"/> -->
+                <p>Photo to be clicked</p>
+                  <div class="p-3 text-center">
+                    <h4 class="mb-0">Manpreet Singh</h4>
+                    <p class="mb-2">Director</p>
+                    <div class="social-icons">
+                      <a href="#"
+                        ><i
+                          class="bg-white id-color bg-hover-2 text-hover-white fa-brands fa-facebook-f"
+                        ></i
+                      ></a>
+                      <a href="#"
+                        ><i
+                          class="bg-white id-color bg-hover-2 text-hover-white fa-brands fa-x-twitter"
+                        ></i
+                      ></a>
+                      <a href="#"
+                        ><i
+                          class="bg-white id-color bg-hover-2 text-hover-white fa-brands fa-instagram"
+                        ></i
+                      ></a>
+                    </div>
+                  </div>
+                </div>
+
+                <div
+                  class="col-lg-3 col-md-6 col-sm-12 d-flex flex-column align-items-center"
+                >
+                <p>Photo to be clicked</p>
+                  <!-- <img src="img/gurpreet.jpg" class="img-fluid z-index-top" alt="" style="height: 350px; object-fit: cover;"/> -->
+                  <div class="p-3 text-center">
+                    <h4 class="mb-0">Gurpreet Singh</h4>
+                    <p class="mb-2">Director</p>
+                    <div class="social-icons">
+                      <a href="#"
+                        ><i
+                          class="bg-white id-color bg-hover-2 text-hover-white fa-brands fa-facebook-f"
+                        ></i
+                      ></a>
+                      <a href="#"
+                        ><i
+                          class="bg-white id-color bg-hover-2 text-hover-white fa-brands fa-x-twitter"
+                        ></i
+                      ></a>
+                      <a href="#"
+                        ><i
+                          class="bg-white id-color bg-hover-2 text-hover-white fa-brands fa-instagram"
+                        ></i
+                      ></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="relative lines-deco">
+          <div class="container relative z-2">
+            <div class="row g-4">
+              <div class="col-lg-6">
+                <div class="ms-4" style="background-color: #fff;">
+                  <div class="subtitle wow fadeInUp mb-3">What Drives Us</div>
+
+                  <div class="row g-3">
+                    <div class="col-lg-6">
+                      <div
+                        class="mb-4 relative wow fadeInRight"
+                        data-wow-delay=".3s"
+                      >
+                        <img
+                          src="img/icons/Collab_Rd.png"
+                          class="w-50px absolute id-color icofont-thunder-light"
+                          alt=""
+                        />
+                        <div class="pl-70">
+                          <h5>Innovation</h5>
+                          <p class="mb-0">
+                            We relentlessly pursue innovative design solutions
+                            that redefine industry standards and inspire
+                            transformational growth globally.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-lg-6">
+                      <div
+                        class="mb-4 relative wow fadeInRight"
+                        data-wow-delay=".3s"
+                      >
+                        <img
+                          src="img/icons/Customer_Rd.png"
+                          class="w-50px absolute id-color icofont-thunder-light"
+                          alt=""
+                        />
+                        <div class="pl-70">
+                          <h5>Integrity</h5>
+                          <p class="mb-0">
+                            We uphold unwavering integrity, ensuring
+                            transparency, ethical practices, and trust in every
+                            project and partnership.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-lg-6">
+                      <div
+                        class="mb-4 relative wow fadeInRight"
+                        data-wow-delay=".3s"
+                      >
+                        <img
+                          src="img/icons/Exl_Rd.png"
+                          class="w-50px absolute id-color icofont-thunder-light"
+                          alt=""
+                        />
+                        <div class="pl-70">
+                          <h5>Excellence</h5>
+                          <p class="mb-0">
+                            We commit to excellence, consistently delivering
+                            superior quality, groundbreaking designs, and
+                            attention to every detail.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-lg-6">
+                      <div
+                        class="mb-4 relative wow fadeInRight"
+                        data-wow-delay=".3s"
+                      >
+                        <img
+                          src="img/icons/int_Rd.png"
+                          class="w-50px absolute id-color icofont-thunder-light"
+                          alt=""
+                        />
+                        <div class="pl-70">
+                          <h5>Collaboration</h5>
+                          <p class="mb-0">
+                            We foster collaboration, uniting diverse expertise
+                            to create integrated solutions that propel
+                            forward-thinking projects seamlessly.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-lg-6">
+                      <div
+                        class="mb-4 relative wow fadeInRight"
+                        data-wow-delay=".3s"
+                      >
+                        <img
+                          src="img/icons/inv_Rd.png"
+                          class="w-50px absolute id-color icofont-thunder-light"
+                          alt=""
+                        />
+                        <div class="pl-70">
+                          <h5>Sustainability</h5>
+                          <p class="mb-0">
+                            We prioritize sustainability, incorporating
+                            eco-friendly practices and designs to safeguard our
+                            environment for future generations.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-lg-6">
+                      <div
+                        class="mb-4 relative wow fadeInRight"
+                        data-wow-delay=".3s"
+                      >
+                        <img
+                          src="img/icons/sustainable_Rd.png"
+                          class="w-50px absolute id-color icofont-thunder-light"
+                          alt=""
+                        />
+                        <div class="pl-70">
+                          <h5>Customer-Centricity</h5>
+                          <p class="mb-0">
+                            We champion customer-centricity, ensuring every
+                            decision enhances client satisfaction and creates
+                            exceptional value consistently globally.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-lg-6">
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="relative">
+                      <img
+                        src="img/ABV_1.jpg"
+                        class="img-fluid wow fadeInUp"
+                        alt=""
+                      />
+                    </div>
+                  </div>
+
+                  <div class="col-md-6">
+                    <div class="spacer-single sm-hide"></div>
+                    <div class="relative">
+                      <img
+                        src="img/ABV_2.jpg"
+                        class="img-fluid wow fadeInUp"
+                        alt=""
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+      <!-- content close -->
+
+      <!-- footer begin -->
+      <footer class="text-light section-dark">
+        <div class="container">
+          <div class="row g-4 align-items-center">
+            <div class="col-md-12">
+              <div
+                class="d-lg-flex align-items-center justify-content-between text-center"
+              >
+              <div>
+                <img src="img/LogoWhite.png" class="w-250px" alt="" /><br />
+                <div class="social-icons mb-sm-30 mt-4">
+                  <a
+                    href="https://www.facebook.com/profile.php?id=61573418790165"
+                    ><i class="fa-brands fa-facebook fa-lg"></i
+                  ></a>
+                  <a href="https://x.com/pincodeinfra"
+                    ><i class="fa-brands fa-x-twitter fa-lg"></i
+                  ></a>
+                  <a
+                    href="https://www.youtube.com/channel/UCQcojLZA80SOr_OPx2AniFQ"
+                    ><i class="fa-brands fa-youtube fa-lg"></i
+                  ></a>
+                  <a href="https://www.instagram.com/pincodeinfra"
+                    ><i class="fa-brands fa-instagram fa-lg"></i
+                  ></a>
+                  <a
+                    href="https://www.linkedin.com/company/105912895/admin/dashboard/"
+                    ><i class="fa-brands fa-linkedin"></i
+                  ></a>
+                </div>
+              </div>
+                <div>
+                  <h3 class="ml-4">Navigation</h3>
+                  <ul style="display: flex; flex-direction: column; justify-content: center; padding-left: 0;">
+                    <a href="/index.html">Home</a>
+                    <a href="/about.html">About</a>
+                    <a href="/upcoming-project.html">Upcoming Project</a>
+                    <a href="/ongoing-project.html">Ongoing Project</a>
+                    <a href="/index.html#contact">Contact</a>
+                  </ul>
+                </div>
+                <div>
+                  <div>
+                    <h3>Address</h3>
+                    A 37, Block A, Industrial Area, Sector 62 <br />
+                    Noida, Uttar Pradesh 201301
+                  </div>
+                  <h3 class="mt-4">Contact Info</h3>
+                  <div style="display: flex; flex-direction: column; ">
+                    <small><i class="fa-solid fa-envelope"></i> info@pincodeinfra.com</small>
+                    <small><i class="fa-solid fa-phone"></i> 7620203030</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="subfooter">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-12 text-center">
+                © 2025 Pincode Infra. All Rights Reserved.
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+      <!-- footer close -->
+    </div>
+
+    <script>
+      // Function to open popup
+      function openPopup() {
+        document.getElementById("popupOverlay").classList.add("active");
+        document.getElementById("popupForm").classList.add("active");
+      }
+
+      // Function to close popup
+      function closePopup() {
+        document.getElementById("popupForm").classList.remove("active");
+        setTimeout(() => {
+          document.getElementById("popupOverlay").classList.remove("active");
+        }, 300); // Matches transition duration
+      }
+
+      // Attach event listeners to all buttons with class 'open-popup-btn'
+      document.querySelectorAll(".open-popup-btn").forEach((button) => {
+        button.addEventListener("click", openPopup);
+      });
+
+      // Close when clicking outside the form
+      document
+        .getElementById("popupOverlay")
+        .addEventListener("click", function (event) {
+          if (event.target === this) {
+            closePopup();
+          }
+        });
+    </script>
+
+    <!-- Javascript Files
+    ================================================== -->
+    <script src="js/plugins.js"></script>
+    <script src="js/designesia.js"></script>
+    <script src="js/swiper.js"></script>
+    <script src="js/custom-marquee.js"></script>
+    <script src="js/custom-swiper-1.js"></script>
+  </body>
+</html>

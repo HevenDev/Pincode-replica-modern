@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="zxx">
+  <head>
+    <title>Pincode Infra — Upcoming Project</title>
+    <link
+      rel="icon"
+      href="img/PINCODE_FAVICON.jpg"
+      type="image/gif"
+      sizes="16x16"
+    />
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="Almaris — Hotel Website Template" name="description" />
+    <meta content="" name="keywords" />
+    <meta content="" name="author" />
+    <!-- CSS Files
+    ================================================== -->
+    <link
+      href="css/bootstrap.min.css"
+      rel="stylesheet"
+      type="text/css"
+      id="bootstrap"
+    />
+    <link href="css/plugins.css" rel="stylesheet" type="text/css" />
+    <link href="css/swiper.css" rel="stylesheet" type="text/css" />
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
+    <link href="css/coloring.css" rel="stylesheet" type="text/css" />
+    <!-- color scheme -->
+    <link
+      id="colors"
+      href="css/colors/scheme-01.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <style>
+      .mv-para {
+        padding: 0 2rem 1rem;
+      }
+      /* Overlay */
+      .pop_overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.6);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+        z-index: 98;
+      }
+
+      /* Popup Form */
+      .popup {
+        background: white;
+        padding: 20px;
+        width: 350px;
+        border-radius: 8px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        text-align: center;
+        transform: scale(0.7);
+        opacity: 0;
+        transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+        position: relative;
+      }
+
+      /* Show Active State */
+      .pop_overlay.active {
+        opacity: 1;
+        visibility: visible;
+      }
+
+      .popup.active {
+        opacity: 1;
+        transform: scale(1);
+      }
+
+      /* Close Button */
+      .close-btn {
+        position: absolute;
+        top: 10px;
+        right: 15px;
+        font-size: 20px;
+        cursor: pointer;
+        color: #555;
+      }
+
+      .close-btn:hover {
+        color: red;
+      }
+
+      /* Form Inputs */
+      .popup h2 {
+        margin-bottom: 10px;
+        font-size: 20px;
+      }
+
+      .popup p {
+        margin-bottom: 15px;
+        color: #666;
+      }
+
+      .popup input,
+      .popup textarea {
+        width: 100%;
+        padding: 10px;
+        margin: 5px 0;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 14px;
+      }
+
+      .popup textarea {
+        resize: none;
+        height: 80px;
+      }
+
+      /* Send Button */
+      .send-btn {
+        background: #301a1a;
+        color: white;
+        padding: 10px;
+        width: 100%;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .send-btn i {
+        margin-left: 8px;
+      }
+
+      .send-btn:hover {
+        background: #218838;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="wrapper">
+      <a href="#" id="back-to-top"></a>
+
+      <!-- page preloader begin -->
+      <div id="de-loader"></div>
+      <!-- page preloader close -->
+      <div class="pop_overlay" id="popupOverlay">
+        <div class="popup" id="popupForm">
+          <span class="close-btn" onclick="closePopup()">&times;</span>
+          <h2>Want to know more?</h2>
+          <p>Enquire now</p>
+          <input type="text" placeholder="Your Name" />
+          <input type="tel" placeholder="Phone Number" />
+          <input type="email" placeholder="Email" />
+          <textarea placeholder="Your Message"></textarea>
+          <button class="send-btn">
+            Send <i class="fas fa-paper-plane"></i>
+          </button>
+        </div>
+      </div>
+      <!-- header begin -->
+      <header class="transparent has-topbar">
+        <!-- <div id="topbar">
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-12">
+                <div class="d-flex justify-content-between xs-hide">
+                  <div class="header-widget d-flex">
+                    <div class="topbar-widget">
+                      <a href="#"
+                        ><i class="icofont-location-pin"></i>A 37, Block A,
+                        Industrial Area, Sector 62, Noida, Uttar Pradesh
+                        201301</a
+                      >
+                    </div>
+                    <div class="topbar-widget">
+                      <a href="#"><i class="icofont-phone"></i>7620203030</a>
+                    </div>
+                    <div class="topbar-widget">
+                      <a href="#"
+                        ><i class="icofont-envelope"></i>info@pincodeinfra.com</a
+                      >
+                    </div>
+                  </div>
+
+                  <div class="social-icons">
+                    <a href="https://www.facebook.com/profile.php?id=61573418790165"><i class="fa-brands fa-facebook fa-lg"></i></a>
+                    <a href="https://x.com/pincodeinfra"><i class="fa-brands fa-x-twitter fa-lg"></i></a>
+                    <a href="https://www.youtube.com/channel/UCQcojLZA80SOr_OPx2AniFQ"><i class="fa-brands fa-youtube fa-lg"></i></a>
+                    <a href="https://www.instagram.com/pincodeinfra"><i class="fa-brands fa-instagram fa-lg"></i></a>
+                    <a href="https://www.linkedin.com/company/105912895/admin/dashboard/"><i class="fa-brands fa-linkedin"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="clearfix"></div>
+          </div>
+        </div> -->
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="de-flex sm-pt10">
+                <div class="de-flex-col">
+                  <!-- logo begin -->
+                  <div id="logo">
+                    <a href="/">
+                      <img class="logo-main" src="img/LogoWhite.png" alt="" />
+                      <img class="logo-scroll" src="img/LogoWhite.png" alt="" />
+                      <img class="logo-mobile" src="img/LogoWhite.png" alt="" />
+                    </a>
+                  </div>
+                  <!-- logo close -->
+                </div>
+                <div class="de-flex-col header-col-mid">
+                  <ul id="mainmenu">
+                    <li>
+                      <a
+                        style="font-size: 20px"
+                        class="menu-item"
+                        href="index.html"
+                        >Home</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        style="font-size: 20px"
+                        class="menu-item"
+                        href="/about.html"
+                        >About</a
+                      >
+                    </li>
+                    <li class="menu-item">
+                      <a style="font-size: 20px" href="/upcoming-project.html"
+                        >Projects</a
+                      >
+                      <ul>
+                        <li>
+                          <a href="/ongoing-project.html">Ongoing Project</a>
+                        </li>
+                        <li>
+                          <a href="/upcoming-project.html">Upcoming Project</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li>
+                      <a
+                        style="font-size: 20px"
+                        class="menu-item"
+                        href="/index.html#features"
+                        >Features</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        style="font-size: 20px"
+                        class="menu-item"
+                        href="/index.html#contact"
+                        >Contact</a
+                      >
+                    </li>
+                  </ul>
+                </div>
+                <div class="de-flex-col">
+                  <div class="menu_side_area">
+                    <button class="open-popup-btn btn-main btn-line">
+                      Enquiry
+                    </button>
+                    <span id="menu-btn"></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+      <!-- header close -->
+      <!-- content begin -->
+      <div class="no-bottom no-top" id="content">
+        <div id="top"></div>
+
+        <section id="subheader" class="relative jarallax text-light">
+          <img
+            src="img/Upcoming_Project_Banner.jpg"
+            class="jarallax-img"
+            alt=""
+          />
+          <div class="container relative z-index-1000">
+            <div class="row justify-content-center">
+              <div class="col-lg-6 text-center">
+                <h1>Upcoming Project</h1>
+                <p class="lead mt-3">
+                  Discover the promise of Ayodhya’s most ambitious township. A
+                  transformative address where sacred tradition meets smart-city
+                  innovation. PincodeInfra’s upcoming township in Ayodhya offers
+                  a unique blend of spiritual living, modern design, and
+                  future-ready infrastructure.
+                </p>
+                <ul class="crumb">
+                  <li><a href="index.html">Home</a></li>
+                  <li class="active">Upcoming Project</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="de-overlay"></div>
+        </section>
+
+        <section class="relative lines-deco">
+          <div class="container">
+            <div class="row g-0 align-items-center justify-content-center">
+              <div class="col-lg-5">
+                <div class="relative wow fadeInUp" data-wow-delay=".3s">
+                  <div class="shape-mask-1 jarallax">
+                    <img
+                      src="img/upcoming/Deep_Spiritual_Connection_new.jpg"
+                      class="jarallax-img"
+                      alt=""
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-lg-5">
+                <div class="ms-lg-5 wow scaleIn bg-white z-index-top">
+                  <h2 class="wow fadeInUp">Deep Spiritual Connection</h2>
+                  <p>
+                    Living in Ayodhya means experiencing serenity, ancient
+                    rituals, and inner peace. Built into the very landscape of
+                    this thoughtfully planned township designed to inspire
+                    spiritual well-being.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="row g-0 align-items-center justify-content-center">
+              <div class="col-lg-5">
+                <div class="me-lg-5 wow scaleIn bg-white z-index-top">
+                  <h2 class="wow fadeInUp">Lucrative Financial Opportunity</h2>
+                  <p>
+                    With soaring real estate demand, Ayodhya’s growth corridors
+                    promise high returns. This township ensures long-term value
+                    with early-mover investment opportunities and consistent
+                    appreciation potential.
+                  </p>
+                </div>
+              </div>
+
+              <div class="col-lg-5">
+                <div class="relative wow fadeInUp" data-wow-delay=".3s">
+                  <div class="shape-mask-2 jarallax">
+                    <img
+                      src="img/upcoming/Lucrative_Financial_Opportunity_new.jpg"
+                      class="jarallax-img"
+                      alt=""
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="row g-0 align-items-center justify-content-center">
+              <div class="col-lg-5">
+                <div class="relative wow fadeInUp" data-wow-delay=".3s">
+                  <div class="shape-mask-1 jarallax">
+                    <img
+                      src="img/upcoming/Heritage _Meets_Innovation_New.jpg"
+                      class="jarallax-img"
+                      alt=""
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-lg-5">
+                <div class="ms-lg-5 wow scaleIn bg-white z-index-top">
+                  <h2 class="wow fadeInUp">Heritage Meets Innovation</h2>
+                  <p>
+                    PincodeInfra’s township combines the legacy of Ayodhya with
+                    cutting-edge infrastructure; wide roads, utilities grid, and
+                    smart-city features to deliver sustainable living in a
+                    heritage-rich zone.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="row g-0 align-items-center justify-content-center">
+              <div class="col-lg-5">
+                <div class="me-lg-5 wow scaleIn bg-white z-index-top">
+                  <h2 class="wow fadeInUp">Vibrant Community Network</h2>
+                  <p>
+                    The township is envisioned as a hub for like-minded
+                    individuals who value culture, community, and lifestyle.
+                    Fostering organic growth and a shared spiritual-modern
+                    experience.
+                  </p>
+                </div>
+              </div>
+
+              <div class="col-lg-5">
+                <div class="relative wow fadeInUp" data-wow-delay=".3s">
+                  <div class="shape-mask-2 jarallax">
+                    <img
+                      src="img/upcoming/Vibrant_Community_Network_new.jpg"
+                      class="jarallax-img"
+                      alt=""
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="row g-0 align-items-center justify-content-center">
+              <div class="col-lg-5">
+                <div class="relative wow fadeInUp" data-wow-delay=".3s">
+                  <div class="shape-mask-1 jarallax">
+                    <img
+                      src="img/upcoming/Global_Tourist_Hub_new.jpg"
+                      class="jarallax-img"
+                      alt=""
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-lg-5">
+                <div class="ms-lg-5 wow scaleIn bg-white z-index-top">
+                  <h2 class="wow fadeInUp">Global Tourist Hub</h2>
+                  <p>
+                    Ayodhya’s airport, temple corridors, and world-class tourism
+                    projects are creating a global magnet. This township will
+                    benefit from constant footfall, hospitality demand, and
+                    economic upliftment.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="row g-0 align-items-center justify-content-center">
+              <div class="col-lg-5">
+                <div class="me-lg-5 wow scaleIn bg-white z-index-top">
+                  <h2 class="wow fadeInUp">Greenfield Township Ecosystem</h2>
+                  <p>
+                    Our presence near Navya Ayodhya places you in the heart of a
+                    1,400-acre smart city plan with state bhawans, museums, a
+                    five-star hotel zone, and civic infrastructure.
+                  </p>
+                </div>
+              </div>
+
+              <div class="col-lg-5">
+                <div class="relative wow fadeInUp" data-wow-delay=".3s">
+                  <div class="shape-mask-2 jarallax">
+                    <img
+                      src="img/upcoming/Greenfield_Township_Ecosystem_new.jpg"
+                      class="jarallax-img"
+                      alt=""
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+      <!-- content close -->
+
+      <!-- footer begin -->
+      <footer class="text-light section-dark">
+        <div class="container">
+          <div class="row g-4 align-items-center">
+            <div class="col-md-12">
+              <div
+                class="d-lg-flex align-items-center justify-content-between text-center"
+              >
+                <div>
+                  <img src="img/LogoWhite.png" class="w-250px" alt="" /><br />
+                  <div class="social-icons mb-sm-30 mt-4">
+                    <a
+                      href="https://www.facebook.com/profile.php?id=61573418790165"
+                      ><i class="fa-brands fa-facebook fa-lg"></i
+                    ></a>
+                    <a href="https://x.com/pincodeinfra"
+                      ><i class="fa-brands fa-x-twitter fa-lg"></i
+                    ></a>
+                    <a
+                      href="https://www.youtube.com/channel/UCQcojLZA80SOr_OPx2AniFQ"
+                      ><i class="fa-brands fa-youtube fa-lg"></i
+                    ></a>
+                    <a href="https://www.instagram.com/pincodeinfra"
+                      ><i class="fa-brands fa-instagram fa-lg"></i
+                    ></a>
+                    <a
+                      href="https://www.linkedin.com/company/105912895/admin/dashboard/"
+                      ><i class="fa-brands fa-linkedin"></i
+                    ></a>
+                  </div>
+                </div>
+                <div>
+                  <h3 class="ml-4">Navigation</h3>
+                  <ul
+                    style="
+                      display: flex;
+                      flex-direction: column;
+                      justify-content: center;
+                      padding-left: 0;
+                    "
+                  >
+                    <a href="/index.html">Home</a>
+                    <a href="/about.html">About</a>
+                    <a href="/upcoming-project.html">Upcoming Project</a>
+                    <a href="/ongoing-project.html">Ongoing Project</a>
+                    <a href="/index.html#contact">Contact</a>
+                  </ul>
+                </div>
+                <div>
+                  <div>
+                    <h3>Address</h3>
+                    A 37, Block A, Industrial Area, Sector 62 <br />
+                    Noida, Uttar Pradesh 201301
+                  </div>
+                  <h3 class="mt-4">Contact Info</h3>
+                  <div style="display: flex; flex-direction: column">
+                    <small
+                      ><i class="fa-solid fa-envelope"></i>
+                      info@pincodeinfra.com</small
+                    >
+                    <small><i class="fa-solid fa-phone"></i> 7620203030</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="subfooter">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-12 text-center">
+                © 2025 Pincode Infra. All Rights Reserved.
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+      <!-- footer close -->
+    </div>
+
+    <script>
+      // Function to open popup
+      function openPopup() {
+        document.getElementById("popupOverlay").classList.add("active");
+        document.getElementById("popupForm").classList.add("active");
+      }
+
+      // Function to close popup
+      function closePopup() {
+        document.getElementById("popupForm").classList.remove("active");
+        setTimeout(() => {
+          document.getElementById("popupOverlay").classList.remove("active");
+        }, 300); // Matches transition duration
+      }
+
+      // Attach event listeners to all buttons with class 'open-popup-btn'
+      document.querySelectorAll(".open-popup-btn").forEach((button) => {
+        button.addEventListener("click", openPopup);
+      });
+
+      // Close when clicking outside the form
+      document
+        .getElementById("popupOverlay")
+        .addEventListener("click", function (event) {
+          if (event.target === this) {
+            closePopup();
+          }
+        });
+    </script>
+    <!-- Javascript Files
+    ================================================== -->
+    <script src="js/plugins.js"></script>
+    <script src="js/designesia.js"></script>
+    <script src="js/swiper.js"></script>
+    <script src="js/custom-marquee.js"></script>
+    <script src="js/custom-swiper-1.js"></script>
+  </body>
+</html>
